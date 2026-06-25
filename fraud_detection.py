@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from logger import logger
 
 model=joblib.load("fraud_detection_model.pkl")
 st.title("Fraud Detection Prediction App")
@@ -16,25 +17,45 @@ newbalanceDest=st.number_input("New Balance of Destination Account",min_value=0.
 
 
 if st.button("Predict"):
-    input_data=pd.DataFrame([{
-        "type":transaction_type,
-        "amount":amount,
-        "oldbalanceOrg": oldbalanceOrg,
-        "newbalanceOrig":newbalanceOrig,
-        "oldbalanceDest":oldbalanceDest,
-        "newbalanceDest":newbalanceDest
 
+    input_data = pd.DataFrame([{
+        "type": transaction_type,
+        "amount": amount,
+        "oldbalanceOrg": oldbalanceOrg,
+        "newbalanceOrig": newbalanceOrig,
+        "oldbalanceDest": oldbalanceDest,
+        "newbalanceDest": newbalanceDest
     }])
 
-    prediction=model.predict(input_data)[0]
-    st.subheader(f"Prediction:'{int(prediction)}'")
+    logging.info(f"Prediction requested for Amount = {amount}")
 
-    probability = model.predict_proba(input_data)[0][1]
+    try:
 
-    st.metric("Fraud Probability", f"{probability*100:.2f}%")
+        prediction = model.predict(input_data)[0]
 
-    if prediction==1:
-        st.error("The transaction is Fraudulent")
-    else:
-        st.success("The transaction is Legitimate")
+        probability = model.predict_proba(input_data)[0][1]
+
+        logging.info(
+            f"Prediction Successful | Prediction = {prediction} | Probability = {probability:.4f}"
+        )
+
+        st.subheader(f"Prediction : {int(prediction)}")
+
+        st.metric(
+            "Fraud Probability",
+            f"{probability*100:.2f}%"
+        )
+
+        if prediction == 1:
+            st.error("The transaction is Fraudulent")
+        else:
+            st.success("The transaction is Legitimate")
+
+    except Exception as e:
+
+        logging.error(f"Prediction Failed : {e}")
+
+        st.error("Prediction Failed!")
+
+        st.exception(e)
 
