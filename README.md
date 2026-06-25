@@ -103,7 +103,8 @@ The trained model uses the following features:
 
 ## 📸 Application Preview
 
-> Add screenshots here.
+> <img width="837" height="846" alt="image" src="https://github.com/user-attachments/assets/5f67d76b-98bc-475f-9430-f1c29a995ead" />
+
 
 Example:
 
