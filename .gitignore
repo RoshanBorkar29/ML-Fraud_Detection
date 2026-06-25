@@ -1,0 +1,90 @@
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+.venv/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# ===========================
+# Python Packaging
+# ===========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ===========================
+# Logs
+# ===========================
+logs/
+*.log
+
+# ===========================
+# Environment Variables
+# ===========================
+.env
+
+# ===========================
+# Cache
+# ===========================
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# ===========================
+# Streamlit
+# ===========================
+.streamlit/secrets.toml
+
+# ===========================
+# Model Files (Choose one option)
+# ===========================
+
+# If model is larger than 100 MB, ignore it
+# *.pkl
+# *.joblib
+
+# If your model is small (recommended for recruiters),
+# comment the above lines so the model is included.
+
+# ===========================
+# Data
+# ===========================
+
+# Ignore raw datasets
+data/raw/
+data/interim/
+
+# Keep processed sample data
+# data/processed/
+
+# Ignore CSVs (optional)
+# *.csv
+
+# ===========================
+# Temporary Files
+# ===========================
+*.tmp
+*.bak
