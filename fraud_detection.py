@@ -1,3 +1,5 @@
+import logging
+
 import streamlit as st
 import pandas as pd
 import joblib
@@ -27,7 +29,7 @@ if st.button("Predict"):
         "newbalanceDest": newbalanceDest
     }])
 
-    logging.info(f"Prediction requested for Amount = {amount}")
+    logger.info(f"Prediction requested for Amount = {amount}")
 
     try:
 
@@ -35,7 +37,7 @@ if st.button("Predict"):
 
         probability = model.predict_proba(input_data)[0][1]
 
-        logging.info(
+        logger.info(
             f"Prediction Successful | Prediction = {prediction} | Probability = {probability:.4f}"
         )
 
@@ -53,7 +55,7 @@ if st.button("Predict"):
 
     except Exception as e:
 
-        logging.error(f"Prediction Failed : {e}")
+        logger.error(f"Prediction Failed : {e}")
 
         st.error("Prediction Failed!")
 
