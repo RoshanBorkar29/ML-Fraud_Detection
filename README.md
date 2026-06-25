@@ -141,6 +141,25 @@ streamlit run fraud_detection.py
 ```
 
 ---
+## Run using Docker
+
+Build the Docker image
+
+```bash
+docker build -t ml-fraud-detection-app .
+```
+
+Run the container
+
+```bash
+docker run -p 8501:8501 ml-fraud-detection-app
+```
+
+Open your browser
+
+```
+http://localhost:8501
+```
 
 ## 💻 Usage
 
