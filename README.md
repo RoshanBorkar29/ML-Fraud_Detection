@@ -69,6 +69,12 @@ This project uses the **PaySim Synthetic Financial Dataset**, which simulates mo
 Link-https://www.kaggle.com/datasets/amanalisiddiqui/fraud-detection-dataset?resource=download
 
 ---
+## EDA plots (Exploratory Data Analysis plots)-
+1.<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/288491b6-f849-437f-a47c-ad42ae2766ad" />
+2.<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/34b7a17d-d8a1-43df-8bf2-a352b0e3357d" />
+3.<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/5cfe78f3-9418-46fb-8235-aeb9f1d8ecf7" />
+
+
 
 ## 📈 Features Used
 
